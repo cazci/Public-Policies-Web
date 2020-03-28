@@ -1,0 +1,104 @@
+@import "mixing";
+
+$mobile-res-width-1: 451px;
+
+.navigation-bar {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  min-height: 48px;
+  background-color: white;
+  .navigation-bar-inner {
+    padding: 0 1em;
+    min-height: 48px;
+    display: grid;
+    grid-template-columns: max-content auto max-content;
+    .brand-container {
+      .image {
+        max-width: 50px;
+      }
+    }
+    // .left-navigation {
+    // }
+    .right-navigation {
+      height: 100%;
+      display: grid;
+      grid-template-columns: max-content max-content;
+      .nav-item-list {
+        @include mob-res-from-max-width($mobile-res-width-1) {
+          display: none;
+        }
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        .nav-item {
+          display: grid;
+          height: 100%;
+          padding: 0 1em;
+          align-content: center;
+          text-align: center;
+          position: relative;
+          font-size: 0.9em;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            top: auto;
+            left: 0;
+            right: 0;
+            height: 2px;
+          }
+
+          &.active {
+            color: var(--primary);
+            &::after {
+              background-color: var(--primary);
+            }
+          }
+
+          &:hover {
+            background-color: var(--secondary7);
+            color: var(--primary);
+          }
+
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
+      .mobile-responsive-button-container {
+        .mobile-responsive-button-container-inner {
+          height: 100%;
+          display: grid;
+          align-content: center;
+          .mobile-responsive-button {
+            border: 0;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            // display: grid;
+            align-content: center;
+            justify-content: center;
+            background-color: transparent;
+            cursor: pointer;
+            display: none;
+
+            @include mob-res-from-max-width($mobile-res-width-1) {
+              display: grid;
+            }
+
+            &:hover {
+              background-color: #e6e6e6;
+            }
+
+            &:active {
+              background-color: #dfdfdf;
+            }
+          }
+        }
+      }
+    }
+  }
+}

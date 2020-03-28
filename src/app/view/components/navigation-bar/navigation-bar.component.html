@@ -1,0 +1,28 @@
+<div class="navigation-bar">
+  <div class="navigation-bar-inner mat-elevation-z1">
+    <div class="brand-container">
+      <div class="brand-container-inner">
+        <div class="image">
+          <img src="../.././../assets/img/icon.png" class="img-resp" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="left-navigation"></div>
+    <div class="right-navigation">
+      <div class="nav-item-list">
+        <div class="nav-item" *ngFor="let nav of navData" [ngClass]="{ active: activeLink == nav.link }">
+          <a routerLink="/{{ nav.link }}">
+            <div class="label">{{ nav.label }}</div>
+          </a>
+        </div>
+      </div>
+      <div class="mobile-responsive-button-container">
+        <div class="mobile-responsive-button-container-inner">
+          <button class="mobile-responsive-button" (click)="openNav()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

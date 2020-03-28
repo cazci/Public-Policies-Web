@@ -1,0 +1,22 @@
+<div class="side-nav-content">
+  <div class="side-nav-content-inner">
+    <div class="header">
+      <div class="header-inner"></div>
+    </div>
+    <div class="navigation-list-container">
+      <mat-list role="list">
+        <mat-list-item
+          matRipple
+          class="mat-list-item"
+          role="listitem"
+          *ngFor="let nav of navData"
+          [ngClass]="{ active: activeLink == nav.link }"
+        >
+          <a routerLink="/{{ nav.link }}">
+            <div class="list-inner">{{ nav.label }}</div>
+          </a>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

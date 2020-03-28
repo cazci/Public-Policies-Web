@@ -1,0 +1,42 @@
+.side-nav-content {
+  min-width: 200px;
+  .side-nav-content-inner {
+    .header {
+      height: 200px;
+      .header-inner {
+      }
+    }
+    .navigation-list-container {
+      .mat-list-item {
+        position: relative;
+
+        &.active {
+          &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary);
+          }
+        }
+
+        &:hover {
+          background-color: #e6e6e6;
+        }
+
+        a {
+          height: 100%;
+          width: 100%;
+          text-decoration: none;
+          color: inherit;
+          .list-inner {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            align-content: center;
+          }
+        }
+      }
+    }
+  }
+}
