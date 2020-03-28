@@ -1,0 +1,11 @@
+@mixin mob-res-from-max-width($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin mob-res-from-min-width($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
