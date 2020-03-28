@@ -5,17 +5,7 @@ import { PageNotFoundComponent } from './core/error-page/page-not-found/page-not
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-      },
-      {
-        path: 'home',
-        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
-      }
-    ]
+    loadChildren: () => import('./view/view.module').then(m => m.ViewModule)
   },
   {
     path: '**',
