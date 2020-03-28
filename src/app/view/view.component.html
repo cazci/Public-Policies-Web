@@ -1,0 +1,19 @@
+<app-navigation-bar (navOpen)="setNavState($event)"></app-navigation-bar>
+<mat-sidenav-container id="navigation-sidenav-container" autosize>
+  <mat-sidenav
+    id="people-main-slide-nav"
+    #peopleMenuSidenav
+    [opened]="isSideNavOpened"
+    [fixedInViewport]="true"
+    [fixedTopGap]="0"
+    [mode]="'over'"
+    [style.marginTop.px]="0"
+    [style.position]="'fixed'"
+  >
+    <app-sidenav-content></app-sidenav-content>
+  </mat-sidenav>
+
+  <mat-sidenav-content id="navigation-sidenav-container-inner-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
