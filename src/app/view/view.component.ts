@@ -7,6 +7,7 @@ import { MatSidenav } from '@angular/material/sidenav'
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
+  isSideNavOpened = false
   @ViewChild('peopleMenuSidenav', { static: true }) sideNav: MatSidenav
   constructor() {}
 
