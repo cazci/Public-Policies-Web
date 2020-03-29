@@ -29,7 +29,7 @@ $divider-height: 5vw;
         text-align: center;
         max-width: 500px;
         margin: auto;
-        padding: 1em;
+        padding: 1.2em;
         color: var(--primary);
       }
     }
@@ -214,6 +214,11 @@ $divider-height: 5vw;
             grid-template-areas: "... form1";
             grid-template-columns: auto max-content;
             padding-bottom: 10px;
+            padding-right: 26px;
+
+            @include mob-res-from-max-width(1199px){
+              padding-right: unset;
+            }
 
             @include mob-res-from-max-width(575px) {
               grid-template-areas: "form1";
