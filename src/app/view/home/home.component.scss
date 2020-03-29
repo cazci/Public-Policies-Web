@@ -92,6 +92,11 @@ $divider-height: 5vw;
     background-color: var(--primary);
     display: grid;
     align-content: center;
+
+    @include mob-res-from-max-width(1036px) {
+      height: auto;
+      padding: 3em 0;
+    }
     .content-container {
       width: 90%;
       margin: auto;
@@ -101,7 +106,7 @@ $divider-height: 5vw;
         grid-column-gap: 30px;
         align-content: center;
 
-        @include mob-res-from-max-width(790px) {
+        @include mob-res-from-max-width(1036px) {
           grid-template-columns: unset;
           grid-template-rows: max-content max-content;
           justify-content: center;
@@ -110,6 +115,7 @@ $divider-height: 5vw;
         .description {
           display: grid;
           align-content: center;
+          color: white;
           .heading {
             font-size: 2em;
             font-weight: 600;
@@ -117,8 +123,9 @@ $divider-height: 5vw;
             margin-bottom: 1em;
           }
           .desc {
-            max-width: 500px;
-            font-size: 1.3em;
+            max-width: 600px;
+            font-size: 1em;
+            font-weight: lighter;
           }
 
           @include mob-res-from-max-width(1216px) {
@@ -130,13 +137,21 @@ $divider-height: 5vw;
             }
           }
 
-          @include mob-res-from-max-width(790px) {
+          @include mob-res-from-max-width(1036px) {
             text-align: center;
             padding-bottom: 1.5em;
           }
         }
 
         .video {
+          display: grid;
+          align-content: center;
+          justify-content: center;
+
+          @include mob-res-from-max-width(665px) {
+            display: unset;
+          }
+
           .emberded {
             width: 600px;
 
@@ -200,7 +215,7 @@ $divider-height: 5vw;
             grid-template-columns: auto max-content;
             padding-bottom: 10px;
 
-            @include mob-res-from-max-width(575px){
+            @include mob-res-from-max-width(575px) {
               grid-template-areas: "form1";
               grid-template-columns: max-content;
               justify-content: center;
