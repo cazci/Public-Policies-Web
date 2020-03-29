@@ -14,8 +14,14 @@ $mobile-res-width-1: 451px;
     display: grid;
     grid-template-columns: max-content auto max-content;
     .brand-container {
-      .image {
-        max-width: 50px;
+      .brand-container-inner {
+        height: 100%;
+        .image {
+          height: 100%;
+          display: grid;
+          align-content: center;
+          width: 50px;
+        }
       }
     }
     // .left-navigation {

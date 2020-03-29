@@ -30,6 +30,9 @@ $public-policies-web-theme: mat-light-theme(
 @include angular-material-theme($public-policies-web-theme);
 
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/scss/bootstrap.scss";
+
 * {
   font-family: "Open Sans", sans-serif;
 }
@@ -43,23 +46,29 @@ body {
   // font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-:root{
-  --primary:#1ea2cc !important;
-  --secondary: #030418 !important;
-  --secondary2: #3A4162 !important;
-  --secondary3: #576A92 !important;
-  --secondary4: #939FB5 !important;
-  --secondary5: #A7B6CA !important;
-  --secondary6: #B4C2D4 !important;
-  --secondary7: #F4F7FA !important;
+:root {
+  // --primary:#1ea2cc !important;
+  --primary: #781b4e !important;
+  // --secondary: #030418 !important;
+  --secondary: #e73134 !important;
+  --secondary2: #3a4162 !important;
+  --secondary3: #576a92 !important;
+  --secondary4: #939fb5 !important;
+  --secondary5: #a7b6ca !important;
+  --secondary6: #b4c2d4 !important;
+  --secondary7: #f4f7fa !important;
 }
 
+//
+// #e73134
+// #936a82
+//
 .img-resp {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-button{
+button {
   outline: none !important;
 }
