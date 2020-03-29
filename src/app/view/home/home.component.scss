@@ -25,6 +25,9 @@ $divider-height: 5vw;
       .logo {
         max-width: 250px;
         margin: auto;
+        height: 100%;
+        display: grid;
+        align-content: center;
       }
       .description {
         text-align: center;
