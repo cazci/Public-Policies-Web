@@ -199,6 +199,13 @@ $divider-height: 5vw;
             grid-template-areas: "... form1";
             grid-template-columns: auto max-content;
             padding-bottom: 10px;
+
+            @include mob-res-from-max-width(575px){
+              grid-template-areas: "form1";
+              grid-template-columns: max-content;
+              justify-content: center;
+            }
+
             .form {
               grid-area: form1;
             }
