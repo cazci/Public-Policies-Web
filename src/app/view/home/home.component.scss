@@ -21,6 +21,7 @@ $divider-height: 5vw;
     }
 
     .content-container {
+      padding-top: 50px;
       .logo {
         max-width: 250px;
         margin: auto;
@@ -31,6 +32,14 @@ $divider-height: 5vw;
         margin: auto;
         padding: 1.2em;
         color: var(--primary);
+
+        label{
+          margin: 0;
+          padding: 3px 5px;
+          border-radius: 4px;
+          font-size: 0.8em;
+          cursor: pointer;
+        }
       }
     }
     .curve {
@@ -271,4 +280,19 @@ $divider-height: 5vw;
     top: -1px;
     transform: rotate(180deg);
   }
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+  background-color: var(--primary);
+  color: white;
+}
+.ripple:hover {
+  background: var(--primary) radial-gradient(circle, transparent 1%, var(--primary) 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #a72a6f;
+  background-size: 100%;
+  transition: background 0s;
 }
