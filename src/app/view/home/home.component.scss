@@ -9,6 +9,17 @@ $divider-height: 5vw;
     display: grid;
     align-content: center;
 
+    .desc {
+      @include mob-res-from-max-width(767px) {
+        order: 2;
+      }
+    }
+    .lg {
+      @include mob-res-from-max-width(767px) {
+        order: 1;
+      }
+    }
+
     .content-container {
       .logo {
         max-width: 250px;
@@ -187,7 +198,7 @@ $divider-height: 5vw;
           .col-sm-3 {
             height: 100%;
 
-            .card-container{
+            .card-container {
               height: 100%;
             }
           }

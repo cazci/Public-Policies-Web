@@ -2,11 +2,21 @@
   <section id="section-1">
     <div class="section-1-container">
       <div class="section-1-container-inner">
-        <div class="content-container">
-          <div class="logo">
-            <img src="../../../assets/img/nightingale.svg" class="img-resp" alt="" />
+        <div class="content-container container">
+          <div class="row">
+            <div class="col-md-6 desc">
+              <div class="description">
+                <strong>Hi! Welcome to Nightingale</strong>, where complex information is made simple and incredibly beautiful! Here you can find some fun
+                quizzes, data vizualizations from the studies our group has made using an agent-based model and a link for our mobile app.
+                This project started on the #CODE VS COVID-19 HackaThon. Please be informed, be safe and let's get through this together.
+              </div>
+            </div>
+            <div class="col-md-6 lg">
+              <div class="logo">
+                <img src="../../../assets/img/nightingale.svg" class="img-resp" alt="" />
+              </div>
+            </div>
           </div>
-          <div class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, corporis.</div>
         </div>
         <div class="curve"></div>
       </div>
@@ -22,8 +32,7 @@
                 What is "NightinGale"?
               </div>
               <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ea id dolores exercitationem quo hic modi quisquam nisi
-                doloremque sit?
+
               </div>
             </div>
             <div class="video">
@@ -59,7 +68,7 @@
                     <div class="card-container">
                       <mat-card>
                         <div class="label">New Cases</div>
-                        <div class="value">64,501</div>
+                        <div class="value">{{ formateNumbers(newCases.asObservable() | async) }}</div>
                       </mat-card>
                     </div>
                   </div>
@@ -67,7 +76,7 @@
                     <div class="card-container">
                       <mat-card>
                         <div class="label">Total Cases</div>
-                        <div class="value">620,723</div>
+                        <div class="value">{{ formateNumbers(totalCases.asObservable() | async) }}</div>
                       </mat-card>
                     </div>
                   </div>
@@ -75,7 +84,7 @@
                     <div class="card-container">
                       <mat-card>
                         <div class="label">Total Deaths</div>
-                        <div class="value">28,650</div>
+                        <div class="value">{{ formateNumbers(totalDeaths.asObservable() | async) }}</div>
                       </mat-card>
                     </div>
                   </div>
@@ -83,7 +92,7 @@
                     <div class="card-container">
                       <mat-card>
                         <div class="label">Total Recovered</div>
-                        <div class="value">137,348</div>
+                        <div class="value">{{ formateNumbers(totalRecovered.asObservable() | async) }}</div>
                       </mat-card>
                     </div>
                   </div>
