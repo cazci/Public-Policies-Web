@@ -6,10 +6,11 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
 import { MatCardModule } from '@angular/material/card'
+import { MatSelectModule } from '@angular/material/select'
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, MatButtonModule, MatRippleModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule],
-  exports: [MatButtonModule, MatRippleModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule]
+  imports: [CommonModule, MatButtonModule, MatRippleModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatSelectModule],
+  exports: [MatButtonModule, MatRippleModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatSelectModule]
 })
 export class MaterialComponentsModule {}

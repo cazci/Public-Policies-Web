@@ -194,6 +194,16 @@ $divider-height: 5vw;
           padding-top: 100px;
           padding-bottom: 100px;
 
+          .form-container {
+            display: grid;
+            grid-template-areas: "... form1";
+            grid-template-columns: auto max-content;
+            padding-bottom: 10px;
+            .form {
+              grid-area: form1;
+            }
+          }
+
           .col-md-3,
           .col-sm-3 {
             height: 100%;

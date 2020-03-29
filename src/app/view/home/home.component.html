@@ -6,9 +6,10 @@
           <div class="row">
             <div class="col-md-6 desc">
               <div class="description">
-                <strong>Hi! Welcome to Nightingale</strong>, where complex information is made simple and incredibly beautiful! Here you can find some fun
-                quizzes, data vizualizations from the studies our group has made using an agent-based model and a link for our mobile app.
-                This project started on the #CODE VS COVID-19 HackaThon. Please be informed, be safe and let's get through this together.
+                <strong>Hi! Welcome to Nightingale</strong>, where complex information is made simple and incredibly beautiful! Here you can
+                find some fun quizzes, data vizualizations from the studies our group has made using an agent-based model and a link for our
+                mobile app. This project started on the #CODE VS COVID-19 HackaThon. Please be informed, be safe and let's get through this
+                together.
               </div>
             </div>
             <div class="col-md-6 lg">
@@ -31,9 +32,7 @@
               <div class="heading">
                 What is "NightinGale"?
               </div>
-              <div class="desc">
-
-              </div>
+              <div class="desc"></div>
             </div>
             <div class="video">
               <div class="emberded">
@@ -62,6 +61,22 @@
               COVID-19 Tracker
             </div>
             <div class="tracking-card-container">
+              <div class="container">
+                <div class="form-container">
+                  <div class="form">
+                    <form [formGroup]="filterFormController">
+                      <mat-form-field>
+                        <mat-label>Filter</mat-label>
+                        <mat-select  formControlName="filter" (selectionChange)="selectionChanged($event)">
+                          <mat-option *ngFor="let country of countryList.asObservable() | async" [value]="country.Slug">
+                            {{ country.Country ? country.Country : 'Global result' }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </form>
+                  </div>
+                </div>
+              </div>
               <div class="container">
                 <div class="row">
                   <div class="col-md-3 col-sm-3">

@@ -33,4 +33,26 @@ export class HomeService {
       })
     )
   }
+
+  getAllCountries() {
+    return this.http.get<any>(`https://api.covid19api.com/countries`, this.httpOptions).pipe(
+      map(response => {
+        return new Result(true, null,  response)
+      }),
+      catchError(error => {
+        return of(new Result(false, error, null))
+      })
+    )
+  }
+
+  getCountryDetails(country:string,status:string){
+    return this.http.get<any>(`https://api.covid19api.com/total/country/${country}/status/${status}`, this.httpOptions).pipe(
+      map(response => {
+        return new Result(true, null,  response)
+      }),
+      catchError(error => {
+        return of(new Result(false, error, null))
+      })
+    )
+  }
 }
