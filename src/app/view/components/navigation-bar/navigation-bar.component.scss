@@ -1,6 +1,6 @@
 @import "mixing";
 
-$mobile-res-width-1: 451px;
+$mobile-res-width-1: 616px;
 
 .navigation-bar {
   position: fixed;
@@ -36,7 +36,7 @@ $mobile-res-width-1: 451px;
         }
         height: 100%;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         .nav-item {
           display: grid;
           height: 100%;

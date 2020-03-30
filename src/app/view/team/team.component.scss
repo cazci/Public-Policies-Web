@@ -1,0 +1,75 @@
+@import "mixing";
+
+$mobile-responsive-width-1: 770px;
+$mobile-responsive-width-2: 524px;
+
+.team-container {
+  .section-1 {
+    .section-1-inner {
+      height: 400px;
+      display: grid;
+      align-content: center;
+      .text {
+        max-width: 90%;
+        margin: auto;
+        text-align: center;
+        color: var(--primary);
+      }
+    }
+  }
+
+  .section-2 {
+    .section-2-inner {
+      .container-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+
+        @include mob-res-from-max-width($mobile-responsive-width-1) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mob-res-from-max-width($mobile-responsive-width-2) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .team-list-item {
+          padding-bottom: 1em;
+          .team-list-item-inner {
+            .picture-container {
+              .picture-inner {
+                width: 170px;
+                height: 170px;
+                margin: auto;
+                overflow: hidden;
+                border-radius: 50%;
+              }
+            }
+            .description-container {
+              padding: 1em 0;
+              .name {
+                text-align: center;
+              }
+              .tag-container {
+                text-align: center;
+                font-size: 0.7em;
+                color: white;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                grid-template-columns: repeat(2, max-content);
+                grid-gap: 5px;
+
+                span {
+                  background-color: var(--primary);
+                  border-radius: 20px;
+                  padding: 3px 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

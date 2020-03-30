@@ -7,12 +7,16 @@ export const navData = [
     label: 'Mobile',
     link: 'mobile'
   },
-  {
-    label: 'Questions',
-    link: 'questions'
-  },
+  // {
+  //   label: 'Questions',
+  //   link: 'questions'
+  // },
   {
     label: 'Safety',
     link: 'safety'
+  },
+  {
+    label: 'Team',
+    link: 'team'
   }
 ]
