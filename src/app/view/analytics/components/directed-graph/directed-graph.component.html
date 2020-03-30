@@ -1,0 +1,195 @@
+<div class="form-container">
+  <form [formGroup]="formController">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Random interactions</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="random_encounters"
+            >
+            </mat-slider>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Initial infected count out of the total population</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="initial_fraction_infected"
+            >
+            </mat-slider>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Interacting count out of the total population</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="fraction_interacting"
+            >
+            </mat-slider>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Infection percentage</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="p_infection"
+            >
+            </mat-slider>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Contact percentage</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="p_contact"
+            >
+            </mat-slider>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="label">Communities interactions</div>
+      <div class="desc">We assume a set of 300 people devided into 3 groups A,B and C with 100 members in each</div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Internal interactions of group A</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="prob_communities_1"
+            >
+            </mat-slider>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Internal interactions of group B</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="prob_communities_2"
+            >
+            </mat-slider>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Internal interactions of group C</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="prob_communities_3"
+            >
+            </mat-slider>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Interactions between group A and B</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="prob_communities_4"
+            >
+            </mat-slider>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Interactions between group A and C</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="prob_communities_5"
+            >
+            </mat-slider>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="c-form-row">
+            <div class="label">Interactions between group B and C</div>
+            <mat-slider
+              class="example-margin"
+              [max]="100"
+              [min]="0"
+              [step]="1"
+              [thumbLabel]="true"
+              [tickInterval]="getSliderTickInterval()"
+              (change)="onChange($event)"
+              formControlName="prob_communities_6"
+            >
+            </mat-slider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<svg class="directed-graph"></svg>

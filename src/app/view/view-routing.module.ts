@@ -23,10 +23,10 @@ const routes: Routes = [
             path: 'mobile',
             loadChildren: () => import('./mobile/mobile.module').then(m => m.MobileModule)
           },
-          {
-            path: 'questions',
-            loadChildren: () => import('./questions/questions.module').then(m => m.QuestionsModule)
-          },
+          // {
+          //   path: 'questions',
+          //   loadChildren: () => import('./questions/questions.module').then(m => m.QuestionsModule)
+          // },
           {
             path: 'safety',
             loadChildren: () => import('./safety/safety.module').then(m => m.SafetyModule)
@@ -34,6 +34,10 @@ const routes: Routes = [
           {
             path: 'team',
             loadChildren: () => import('./team/team.module').then(m => m.TeamModule)
+          },
+          {
+            path: 'analytics',
+            loadChildren: () => import('./analytics/analytics.module').then(m => m.AnalyticsModule)
           }
         ]
       }

@@ -7,10 +7,10 @@ export const navData = [
     label: 'Mobile',
     link: 'mobile'
   },
-  // {
-  //   label: 'Questions',
-  //   link: 'questions'
-  // },
+  {
+    label: 'Analytics',
+    link: 'analytics'
+  },
   {
     label: 'Safety',
     link: 'safety'

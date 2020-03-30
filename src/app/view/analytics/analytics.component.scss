@@ -1,0 +1,13 @@
+.analytics-container {
+  padding-top: 100px;
+  .analytics-container-inner {
+    .heading {
+      text-align: center;
+      color: var(--primary);
+      padding-bottom: 30px;
+    }
+  }
+  .description {
+    color: var(--primary);
+  }
+}
