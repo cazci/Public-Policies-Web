@@ -8,62 +8,62 @@ import { Component, OnInit } from '@angular/core'
 export class TeamComponent implements OnInit {
   teamMembers = [
     {
-      image: '',
+      image: 'user.svg',
       name: 'Beatriz',
       spec: ['Project management', 'Communication']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Abel Camacho',
       spec: ['Modeling']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Tim Jones',
       spec: ['Preprocessing']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Michel Heusser',
       spec: ['Preprocessing']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Lutharsanen Kunam',
       spec: ['Modeling']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Lukas Heumos',
       spec: ['Preprocessing']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Sashika Nawarathne',
       spec: ['Mobile development', 'Web development']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Mattia Gasparini',
       spec: ['Modeling', 'Preprocessing']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Carolin Liesenjohann',
       spec: ['Design', 'Communication']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Luis Ramos',
       spec: ['Modeling', 'Visualization']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Sarthak Pokharel',
       spec: ['Modeling', 'Visualization', 'Api', 'Web development']
     },
     {
-      image: '',
+      image: 'user.svg',
       name: 'Nishan Wijethunga',
       spec: ['Web development']
     }

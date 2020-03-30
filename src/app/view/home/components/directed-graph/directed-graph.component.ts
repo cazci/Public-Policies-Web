@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { dataSource } from './temp.data'
 import * as d3 from 'd3'
 import { HomeService } from '../../home.service'
+import { NodeGraphRequestData } from '../models/node-graph-request-data'
 declare var invalidation: any
 
 @Component({
@@ -16,8 +17,13 @@ export class DirectedGraphComponent implements OnInit {
   constructor(private homeService: HomeService) {}
 
   ngOnInit() {
-    // this.createGraph({ links: this.data.links, nodes: this.data.nodes })
+    this.createGraph({ links: this.data.links, nodes: this.data.nodes })
     this.getData()
+  }
+
+  removeNodeGraph() {
+    document.querySelector('.node-graph-circle').remove()
+    document.querySelector('.node-graph-lines').remove()
   }
 
   createGraph(data: { nodes: any; links: any }) {
@@ -30,7 +36,8 @@ export class DirectedGraphComponent implements OnInit {
 
       const color = (d: any) => {
         const scale = d3.scaleOrdinal(d3.schemeCategory10)(d)
-        return d3.scaleOrdinal(d3.schemeCategory10)(d)
+        // return d3.scaleOrdinal(d3.schemeCategory10)(d)
+        return '#781b4e'
       }
 
       const drag = (simulation: d3.Simulation<d3.SimulationNodeDatum, undefined>) => {
@@ -77,6 +84,7 @@ export class DirectedGraphComponent implements OnInit {
 
       const link = svg
         .append('g')
+        .attr('class', 'node-graph-lines')
         .attr('stroke', '#999')
         .attr('stroke-opacity', 0.6)
         .selectAll('line')
@@ -86,6 +94,7 @@ export class DirectedGraphComponent implements OnInit {
 
       const node = svg
         .append('g')
+        .attr('class', 'node-graph-circle')
         .attr('stroke', '#fff')
         .attr('stroke-width', 1)
         .selectAll('circle')
@@ -114,14 +123,7 @@ export class DirectedGraphComponent implements OnInit {
   }
 
   getData() {
-    const data: {
-      random_encounters: string
-      prob_communities: string
-      initial_fraction_infected: string
-      fraction_interacting: string
-      p_infection: string
-      p_contact: string
-    } = {
+    const data: NodeGraphRequestData = {
       random_encounters: '0.01',
       prob_communities: '0.1,0.2,0.3,0.4,0.5',
       initial_fraction_infected: '0.08',
