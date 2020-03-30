@@ -1,0 +1,35 @@
+<div class="team-container">
+  <div class="section-1">
+    <div class="section-1-inner">
+      <h4 class="text">
+        <strong>Team ABM COVID-19</strong> is a multidisciplinary team that rose up to the challenge of the
+        <strong>#CODEvsCOVID19</strong> hackathon that happened during march 27 up to march 30.
+      </h4>
+    </div>
+  </div>
+  <div class="section-2">
+    <div class="section-2-inner">
+      <div class="container">
+        <div class="container-inner">
+          <div class="team-list-item" *ngFor="let member of teamMembers">
+            <div class="team-list-item-inner">
+              <div class="picture-container">
+                <div class="picture-inner mat-elevation-z1">
+                  <img src="../../../assets/img/user.svg" class="img-resp" alt="" />
+                </div>
+              </div>
+              <div class="description-container">
+                <p class="name">{{ member.name }}</p>
+                <div class="tag-container">
+                  <span *ngFor="let spec of member.spec">
+                    {{ spec.replace(' ', '&nbsp;') }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
