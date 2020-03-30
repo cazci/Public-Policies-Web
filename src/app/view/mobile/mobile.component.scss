@@ -1,0 +1,24 @@
+@import 'mixing';
+
+.mobile-container {
+  min-height: 100vh;
+  .section-1 {
+    .section-1-inner {
+      height: 400px;
+      display: grid;
+      align-content: center;
+      .text {
+        max-width: 90%;
+        margin: auto;
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 10px;
+
+        @include mob-res-from-max-width(712px){
+          font-size: 1em;
+        }
+
+      }
+    }
+  }
+}

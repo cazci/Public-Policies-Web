@@ -1,0 +1,12 @@
+.safty-container {
+  .safty-container-inner {
+    padding: 5em 0;
+
+    mat-card {
+      .heading {
+        text-align: center;
+        color: var(--primary);
+      }
+    }
+  }
+}
