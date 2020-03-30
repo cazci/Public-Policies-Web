@@ -69,7 +69,7 @@ export class DirectedGraphComponent implements OnInit {
         .force('y', d3.forceY())
 
       const svg = d3
-        .select('svg')
+        .select('.directed-graph')
         .attr('width', '100%')
         .attr('height', '500px')
         // .attr('viewbox', `${-this.chartWidth / 2} ${-this.chartHeight / 2} ${this.chartWidth} ${this.chartHeight}`)
@@ -92,15 +92,15 @@ export class DirectedGraphComponent implements OnInit {
         .data(nodes)
         .join('circle')
         .attr('r', 5)
-        .attr('fill', (d: any) => color(d.state))
+        .attr('fill', (d: any) => color(d.n_contacts))
         .call(drag(simulation))
 
       simulation.on('tick', () => {
         link
-          .attr('x1', (d: any) => d.source)
-          .attr('y1', (d: any) => d.source)
-          .attr('x2', (d: any) => d.target)
-          .attr('y2', (d: any) => d.target)
+          .attr('x1', (d: any) => d.source.x)
+          .attr('y1', (d: any) => d.source.y)
+          .attr('x2', (d: any) => d.target.x)
+          .attr('y2', (d: any) => d.target.y)
 
         node.attr('cx', (d: any) => d.x).attr('cy', (d: any) => d.y)
       })
@@ -131,7 +131,7 @@ export class DirectedGraphComponent implements OnInit {
     }
     this.homeService.getNodeGrapData(data).subscribe(response => {
       if (response.successs) {
-        // this.createGraph({ links: response.data.links, nodes: response.data.nodes })
+        this.createGraph({ links: response.data.links, nodes: response.data.nodes })
       }
     })
   }
