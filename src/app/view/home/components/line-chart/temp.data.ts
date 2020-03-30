@@ -83,7 +83,7 @@ export const dataSource: Array<{ key: string; values: Array<{ date: string; valu
     ]
   },
   {
-    key: 'Normal',
+    key: 'Prediction',
     values: [
       ...basicData.map(d => {
         return { date: d.date, value: d.value -= 15 }
