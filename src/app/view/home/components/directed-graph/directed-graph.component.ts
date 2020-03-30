@@ -102,7 +102,7 @@ export class DirectedGraphComponent implements OnInit {
         .join('circle')
         .attr('r', 5)
         .attr('fill', (d: any) => color(d.n_contacts))
-        .call(drag(simulation))
+        // .call(drag(simulation))
 
       simulation.on('tick', () => {
         link
