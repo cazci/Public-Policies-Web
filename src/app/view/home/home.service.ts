@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { map, catchError } from 'rxjs/operators'
 import { of } from 'rxjs'
+import { environment } from 'src/environments/environment'
 
 interface HTTPOptionData {
   [key: string]: HttpHeaders
@@ -37,7 +38,7 @@ export class HomeService {
   getAllCountries() {
     return this.http.get<any>(`https://api.covid19api.com/countries`, this.httpOptions).pipe(
       map(response => {
-        return new Result(true, null,  response)
+        return new Result(true, null, response)
       }),
       catchError(error => {
         return of(new Result(false, error, null))
@@ -45,14 +46,37 @@ export class HomeService {
     )
   }
 
-  getCountryDetails(country:string,status:string){
+  getCountryDetails(country: string, status: string) {
     return this.http.get<any>(`https://api.covid19api.com/total/country/${country}/status/${status}`, this.httpOptions).pipe(
       map(response => {
-        return new Result(true, null,  response)
+        return new Result(true, null, response)
       }),
       catchError(error => {
         return of(new Result(false, error, null))
       })
     )
+  }
+
+  getNodeGrapData(data: {
+    random_encounters: string
+    prob_communities: string
+    initial_fraction_infected: string
+    fraction_interacting: string
+    p_infection: string
+    p_contact: string
+  }) {
+    return this.http
+      .get(
+        `${environment.API_URL}/data?random_encounters=${data.random_encounters}&prob_communities=${data.prob_communities}&initial_fraction_infected=${data.initial_fraction_infected}&fraction_interacting=${data.fraction_interacting}&p_infection=${data.p_infection}&p_contact=${data.p_contact}`,
+        this.httpOptions
+      )
+      .pipe(
+        map(response => {
+          return new Result(true, null, response)
+        }),
+        catchError(error => {
+          return of(new Result(false, error, null))
+        })
+      )
   }
 }
