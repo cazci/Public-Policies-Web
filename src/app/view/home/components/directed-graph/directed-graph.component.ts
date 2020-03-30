@@ -17,8 +17,8 @@ export class DirectedGraphComponent implements OnInit {
   constructor(private homeService: HomeService) {}
 
   ngOnInit() {
-    // this.createGraph({ links: this.data.links, nodes: this.data.nodes })
-    this.getData()
+    this.createGraph({ links: this.data.links, nodes: this.data.nodes })
+    // this.getData()
   }
 
   removeNodeGraph() {
