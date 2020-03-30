@@ -74,14 +74,14 @@ const basicData = [
 ]
 
 export const dataSource: Array<{ key: string; values: Array<{ date: string; value: number }> }> = [
-  {
-    key: 'Upperbound',
-    values: [
-      ...basicData.map(d => {
-        return { date: d.date, value: d.value += 40 }
-      })
-    ]
-  },
+  // {
+  //   key: 'Upperbound',
+  //   values: [
+  //     ...basicData.map(d => {
+  //       return { date: d.date, value: d.value += 40 }
+  //     })
+  //   ]
+  // },
   {
     key: 'Prediction',
     values: [
@@ -90,14 +90,14 @@ export const dataSource: Array<{ key: string; values: Array<{ date: string; valu
       })
     ]
   },
-  {
-    key: 'Lowerbound',
-    values: [
-      ...basicData.map(d => {
-        return { date: d.date, value: d.value -= 30 }
-      })
-    ]
-  }
+  // {
+  //   key: 'Lowerbound',
+  //   values: [
+  //     ...basicData.map(d => {
+  //       return { date: d.date, value: d.value -= 30 }
+  //     })
+  //   ]
+  // }
 ]
 
 //

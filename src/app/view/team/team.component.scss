@@ -6,7 +6,7 @@ $mobile-responsive-width-2: 524px;
 .team-container {
   .section-1 {
     .section-1-inner {
-      height: 400px;
+      height: 300px;
       display: grid;
       align-content: center;
       .text {
@@ -14,6 +14,23 @@ $mobile-responsive-width-2: 524px;
         margin: auto;
         text-align: center;
         color: var(--primary);
+      }
+    }
+  }
+
+  .project-repositories {
+    color: var(--primary);
+    padding-bottom: 70px;
+
+    .heading {
+      font-weight: 600;
+    }
+    a {
+      text-decoration: none;
+      color: var(--primary);
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

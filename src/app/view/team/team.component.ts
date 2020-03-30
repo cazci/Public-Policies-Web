@@ -1,73 +1,63 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-team',
-  templateUrl: './team.component.html',
-  styleUrls: ['./team.component.scss']
+  selector: "app-team",
+  templateUrl: "./team.component.html",
+  styleUrls: ["./team.component.scss"]
 })
 export class TeamComponent implements OnInit {
   teamMembers = [
     {
-      image: 'user.svg',
-      name: 'Beatriz',
-      spec: ['Project management', 'Communication']
+      image: "max.png",
+      name: "Max",
+      spec: ["Mentor"]
     },
     {
-      image: 'user.svg',
-      name: 'Abel Camacho',
-      spec: ['Modeling']
+      image: "beatriz.jpeg",
+      name: "Beatriz Yumi",
+      spec: ["Project management", "Communication"]
     },
     {
-      image: 'user.svg',
-      name: 'Tim Jones',
-      spec: ['Preprocessing']
+      image: "abel.png",
+      name: "Abel Camacho",
+      spec: ["Modeling"]
     },
     {
-      image: 'user.svg',
-      name: 'Michel Heusser',
-      spec: ['Preprocessing']
+      image: "lutharsanen.jpeg",
+      name: "Lutharsanen Kunam",
+      spec: ["Modeling"]
     },
     {
-      image: 'user.svg',
-      name: 'Lutharsanen Kunam',
-      spec: ['Modeling']
+      image: "sashika.jpg",
+      name: "Sashika Nawarathne",
+      spec: ["Mobile development", "Web development"]
     },
     {
-      image: 'user.svg',
-      name: 'Lukas Heumos',
-      spec: ['Preprocessing']
+      image: "carolin.jpg",
+      name: "Carolin Liesenjohann",
+      spec: ["Design", "UX"]
     },
     {
-      image: 'user.svg',
-      name: 'Sashika Nawarathne',
-      spec: ['Mobile development', 'Web development']
+      image: "lukas.jpg",
+      name: "Lukas Heumos",
+      spec: ["Preprocessing"]
     },
     {
-      image: 'user.svg',
-      name: 'Mattia Gasparini',
-      spec: ['Modeling', 'Preprocessing']
+      image: "nishan.jpg",
+      name: "Nishan Wijethunga",
+      spec: ["Web development"]
     },
     {
-      image: 'user.svg',
-      name: 'Carolin Liesenjohann',
-      spec: ['Design', 'Communication']
+      image: "moritz.jpg",
+      name: "Moritz",
+      spec: ["Api", "Backend"]
     },
     {
-      image: 'user.svg',
-      name: 'Luis Ramos',
-      spec: ['Modeling', 'Visualization']
-    },
-    {
-      image: 'user.svg',
-      name: 'Sarthak Pokharel',
-      spec: ['Modeling', 'Visualization', 'Api', 'Web development']
-    },
-    {
-      image: 'user.svg',
-      name: 'Nishan Wijethunga',
-      spec: ['Web development']
+      image: "luis.jpeg",
+      name: "Luis Ramos",
+      spec: ["Modeling", "Visualization"]
     }
-  ]
+  ];
   constructor() {}
 
   ngOnInit() {}
