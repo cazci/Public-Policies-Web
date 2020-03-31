@@ -23,16 +23,18 @@ export class LineChartComponent implements OnInit {
   data = DataSource
   chartHeight = 500
   chartWidth = 500
-  margin = { top: 20, right: 30, bottom: 30, left: 40 }
+  margin = { top: 20, right: 30, bottom: 30, left: 60 }
 
   constructor() {}
 
   ngOnInit() {
-    this.createGraph(this.data, '2020-03-19')
+    this.createGraph(this.data, `${new Date().toDateString()}`)
     // this._createGraph(this.data, 30)
   }
 
   createGraph(dataSource: DataSource, breakPoint: string) {
+    console.log(dataSource);
+
     const svgElement = d3
       .select('.line-chart')
       .attr('width', '100%')
@@ -41,7 +43,7 @@ export class LineChartComponent implements OnInit {
 
     const parseDate = d3.utcParse('%Y-%m-%d')
 
-    const dates: Array<Date> = Object.assign([], ...dataSource.map(d => d.values.map(d2 => parseDate(d2.date))))
+    const dates: Array<Date> = Object.assign([], ...dataSource.map(d => d.values.map(d2 => new Date(d2.date))))
 
     const values: Array<number> = Object.assign([], ...dataSource.map(d => d.values.map(d2 => d2.value)))
 
@@ -51,7 +53,7 @@ export class LineChartComponent implements OnInit {
       return {
         key: d.key,
         values: d.values.map(d2 => {
-          return { date: parseDate(d2.date), value: d2.value }
+          return { date: new Date(d2.date), value: d2.value }
         })
       }
     })
@@ -102,23 +104,23 @@ export class LineChartComponent implements OnInit {
 
     svgElement.append('g').call(yAxis)
 
-    svgElement
-      .append('g')
-      .append('line')
-      .attr('y1', 0)
-      .attr('y2', this.chartHeight - this.margin.bottom)
-      .attr('x1', x(parseDate(breakPoint)))
-      .attr('x2', x(parseDate(breakPoint)))
-      .attr('stroke', 'black')
+    // svgElement
+    //   .append('g')
+    //   .append('line')
+    //   .attr('y1', 0)
+    //   .attr('y2', this.chartHeight - this.margin.bottom)
+    //   .attr('x1', x(new Date(breakPoint)))
+    //   .attr('x2', x(new Date(breakPoint)))
+    //   .attr('stroke', 'black')
 
-    svgElement
-      .append('text')
-      .attr('stroke-width', 3)
-      .attr('x', x(parseDate(breakPoint))+3)
-      .attr('dy', '0.35em')
-      .attr('style', 'font: bold 10px sans-serif;')
-      .attr('y', 10)
-      .text('Break point')
+    // svgElement
+    //   .append('text')
+    //   .attr('stroke-width', 3)
+    //   .attr('x', x(new Date(breakPoint))+3)
+    //   .attr('dy', '0.35em')
+    //   .attr('style', 'font: bold 10px sans-serif;')
+    //   .attr('y', 10)
+    //   .text('Break point')
 
     const serie = svgElement
       .append('g')
@@ -172,7 +174,7 @@ export class LineChartComponent implements OnInit {
       return {
         key: d.key,
         values: d.values.map(d2 => {
-          return { date: parseDate(d2.date), value: d2.value }
+          return { date: new Date(d2.date), value: d2.value }
         })
       }
     })
@@ -210,7 +212,7 @@ export class LineChartComponent implements OnInit {
             .attr('x', 3)
             .attr('text-anchor', 'start')
             .attr('font-weight', 'bold')
-            .text('Close')
+            .text('Infected count')
         )
 
     const line = d3
@@ -245,7 +247,7 @@ export class LineChartComponent implements OnInit {
       .append('g')
       .style('font', 'bold 10px sans-serif')
       .selectAll('g')
-      .data(dataSource)
+      .data(convertedDatasource)
       .join('g')
 
     serie
