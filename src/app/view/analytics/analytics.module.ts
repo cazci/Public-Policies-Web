@@ -5,10 +5,11 @@ import { AnalyticsRoutingModule } from './analytics-routing.module'
 import { AnalyticsComponent } from './analytics.component'
 import { DirectedGraphComponent } from './components/directed-graph/directed-graph.component'
 import { MaterialComponentsModule } from 'src/app/shared/material-components/material-components.module'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LineChartComponent } from './components/line-chart/line-chart.component'
 
 @NgModule({
-  declarations: [AnalyticsComponent, DirectedGraphComponent],
+  declarations: [AnalyticsComponent, DirectedGraphComponent, LineChartComponent],
   imports: [CommonModule, AnalyticsRoutingModule, MaterialComponentsModule, FormsModule, ReactiveFormsModule]
 })
 export class AnalyticsModule {}
