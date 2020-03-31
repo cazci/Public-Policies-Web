@@ -300,6 +300,7 @@ export class DirectedGraphComponent implements OnInit {
         }
       })
     } catch (error) {
+      console.log(error)
       this.createGraph({ links: this.data.links, nodes: this.data.nodes })
     }
   }
